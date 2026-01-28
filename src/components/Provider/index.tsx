@@ -1,0 +1,18 @@
+'use client';
+
+import React from 'react';
+import { Footer, Header } from '../layout';
+import { WhatsAppButton } from '../whatsApp';
+
+const ClientProvider = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="min-h-screen bg-background mx-auto">
+      <Header />
+      <main>{children}</main>
+      <Footer />
+      <WhatsAppButton />
+    </div>
+  );
+};
+
+export default ClientProvider;
