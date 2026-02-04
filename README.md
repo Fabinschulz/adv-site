@@ -1,4 +1,4 @@
-# LANDPAGE ADVOCACIA MARIANA
+# Landing Page - ADVOCACIA
 
 Este projeto é um landing page focada para uso profissional de uma advocacia dos setores Jurídicos, Direito do Trabalho e Civil.
 
