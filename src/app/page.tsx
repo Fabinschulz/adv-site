@@ -1,4 +1,4 @@
-import { About, Areas, Differentials, FAQ, Hero, Testimonials } from '@/landing';
+import { About, Areas, Contact, Differentials, FAQ, Hero, Testimonials } from '@/landing';
 import { JSX } from 'react';
 
 export default function HomePage(): JSX.Element {
@@ -10,7 +10,7 @@ export default function HomePage(): JSX.Element {
       <Differentials />
       <Testimonials />
       <FAQ />
-      {/* <Contact /> */}
+      <Contact />
     </>
   );
 }

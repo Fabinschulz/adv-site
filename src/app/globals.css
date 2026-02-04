@@ -173,7 +173,7 @@
   }
 
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-primary via-primary to-primary bg-clip-text text-transparent;
+    @apply bg-linear-to-r from-primary via-primary to-primary bg-clip-text text-transparent;
   }
 
   .bg-gradient-gold {
@@ -219,7 +219,7 @@ body {
 
 /* Estilo do "polegar"*/
 ::-webkit-scrollbar-thumb {
-  background-color: #d1d5db;
+  background-color: #CE9D22;
   /* Cor de fundo do polegar */
   border-radius: 8px;
   /* Raio das bordas do polegar */

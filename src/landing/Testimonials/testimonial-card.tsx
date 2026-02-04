@@ -1,5 +1,3 @@
-'use client';
-
 import { Quote, Star } from 'lucide-react';
 import { JSX } from 'react';
 import { Testimonial } from './constants';

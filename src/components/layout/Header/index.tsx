@@ -1,6 +1,7 @@
 'use client';
 
 import { Button, Logo } from '@/components';
+import { WHATSAPP } from '@/utils/constants';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { JSX, MouseEvent, useEffect, useState } from 'react';
@@ -38,10 +39,7 @@ export function Header(): JSX.Element {
     setIsMobileMenuOpen(false);
   };
 
-  const handleOpenWhatsApp = (_e: MouseEvent<HTMLButtonElement>) => {
-    const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta com a Dra. Mariana.');
-    window.open(`https://wa.me/5511932142673?text=${message}`, '_blank');
-  };
+  const handleOpenWhatsApp = (_e: MouseEvent<HTMLButtonElement>) =>  WHATSAPP.openWhatsApp();
 
   return (
     <motion.header
@@ -104,12 +102,7 @@ export function Header(): JSX.Element {
                 </button>
               ))}
 
-              <Button
-                onClick={handleOpenWhatsApp}
-                className="mt-4 w-full bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                Fale Conosco
-              </Button>
+              <Button onClick={handleOpenWhatsApp}>Fale Conosco</Button>
             </nav>
           </motion.div>
         )}

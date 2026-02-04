@@ -1,5 +1,6 @@
 'use client';
 
+import { WHATSAPP } from '@/utils';
 import { motion } from 'framer-motion';
 
 const WhatsAppIcon = () => (
@@ -9,13 +10,10 @@ const WhatsAppIcon = () => (
 );
 
 const WhatsAppButton = () => {
-  const phoneNumber = '5511932142673';
-  const message = 'Olá! Gostaria de agendar uma consulta com a Dra. Mariana.';
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
     <motion.a
-      href={whatsappUrl}
+      href={WHATSAPP.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 group"

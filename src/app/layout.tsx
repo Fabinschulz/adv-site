@@ -1,7 +1,6 @@
+import { ClientProvider } from '@/components';
 import { cn } from '@/utils';
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-//@ts-ignore
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -12,9 +11,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Fábio Correa', url: 'https://github.com/Fabinschulz' }]
 };
 
-const DynamicProvider = dynamic(() => import('@/components/Provider'), {
-  ssr: true
-});
 
 export default function RootLayout({
   children
@@ -24,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={cn('antialiased')}>
-        <DynamicProvider>{children}</DynamicProvider>
+        <ClientProvider>{children}</ClientProvider>
       </body>
     </html>
   );

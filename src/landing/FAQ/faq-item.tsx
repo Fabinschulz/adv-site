@@ -1,5 +1,3 @@
-'use client';
-
 import { AccordionContent, AccordionItem, AccordionTrigger } from '@/components';
 import { JSX } from 'react/jsx-dev-runtime';
 import { FAQItem as Item } from './constants';

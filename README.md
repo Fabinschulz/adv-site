@@ -1,14 +1,7 @@
-# Easymart – Gestão de Identidade e Acesso
+# LANDPAGE ADVOCACIA MARIANA
 
-Este projeto é o módulo central de gerenciamento de autenticação (AuthN) e autorização (AuthZ) para o ecossistema de sistemas **Easymart**.  
-Fornece uma interface administrativa para controle de usuários, perfis de acesso e métricas de engajamento, sob uma arquitetura **White Label** e **Multi-tenant**.
+Este projeto é um landing page focada para uso profissional de uma advocacia dos setores Jurídicos, Direito do Trabalho e Civil.
 
-## Principais Funcionalidades
-
-- **Controle de Acesso (RBAC)**: Gestão granular de permissões por perfis.  
-- **Visualização de Métricas**: Dashboards dinâmicos com dados de cadastros e status de usuários.  
-- **Sistema White Label**: Personalização da identidade visual via variáveis de ambiente e paletas dinâmicas.  
-- **Atividades Recentes**: Log em tempo real das ações realizadas no sistema.
 
 ## Como Iniciar
 
@@ -22,14 +15,7 @@ Antes de começar, certifique-se de ter instalado:
 
 ## Execução Local (Desenvolvimento)
 
-### 1. **Configurar variáveis de ambiente**
-   Crie o arquivo .env.local na raiz do projeto:
-
-```bash
-   cp .env.example .env.local
-```
-
-### 2. Instalar dependências
+### 1. Instalar dependências
 
 ```bash
     (npm | pnpm | yarn) install
@@ -48,38 +34,11 @@ Antes de começar, certifique-se de ter instalado:
 ### 1. Construir a imagem
 
 ```bash
-docker build -t easymart-auth-web .
+docker build -t adv-img .
 ```
 
 ### 2. Executar o container
 
 ```bash
-docker run -p 3000:3000 --env-file .env.local easymart-auth-app
-```
-
-## Personalização (White Label)
-
-## Personalização (White Label)
-
-Configure no arquivo `.env`:
-
-```env
-NEXT_PUBLIC_BASE_API_URL=
-NEXT_PUBLIC_TENANCY_NAME=
-
-NEXT_PUBLIC_TENANCY_MAIN_LOGO_URL=
-NEXT_PUBLIC_TENANCY_INVERTED_LOGO_URL=
-NEXT_PUBLIC_MAIN_FAVICON_URL=
-
-NEXT_PUBLIC_MAIN_COLOR=
-
-NEXT_PUBLIC_PRIMARY_LIGHT=
-NEXT_PUBLIC_PRIMARY_MAIN=
-NEXT_PUBLIC_PRIMARY_DARK=
-NEXT_PUBLIC_PRIMARY_CONTRAST=
-
-NEXT_PUBLIC_SECONDARY_LIGHT=
-NEXT_PUBLIC_SECONDARY_MAIN=
-NEXT_PUBLIC_SECONDARY_DARK=
-NEXT_PUBLIC_SECONDARY_CONTRAST=
+docker run -p 3000:3000 --env-file .env.local adv-web
 ```

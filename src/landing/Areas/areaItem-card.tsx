@@ -1,5 +1,3 @@
-'use client';
-
 import { itemVariants } from '@/utils';
 import { motion } from 'framer-motion';
 import { JSX } from 'react';

@@ -4,9 +4,9 @@ import React from 'react';
 import { Footer, Header } from '../layout';
 import { WhatsAppButton } from '../whatsApp';
 
-const ClientProvider = ({ children }: { children: React.ReactNode }) => {
+export const ClientProvider = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="min-h-screen bg-background mx-auto">
+    <div className="min-h-screen bg-background">
       <Header />
       <main>{children}</main>
       <Footer />
@@ -14,5 +14,3 @@ const ClientProvider = ({ children }: { children: React.ReactNode }) => {
     </div>
   );
 };
-
-export default ClientProvider;

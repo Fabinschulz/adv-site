@@ -1,16 +1,11 @@
-'use client';
-
 import { Button } from '@/components';
-import { itemVariants } from '@/utils';
+import { itemVariants, WHATSAPP } from '@/utils';
 import { motion } from 'framer-motion';
 import { MessageSquare } from 'lucide-react';
 import { JSX } from 'react/jsx-dev-runtime';
 
 export function DifferentialsCTA(): JSX.Element {
-  const openWhatsApp = (): void => {
-    const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta com a Dra. Mariana.');
-    window.open(`https://wa.me/5511932142673?text=${message}`, '_blank');
-  };
+  const openWhatsApp = (): void => WHATSAPP.openWhatsApp();
 
   return (
     <motion.div
