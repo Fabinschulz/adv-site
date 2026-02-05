@@ -30,6 +30,8 @@ export function Header(): JSX.Element {
     };
 
     window.addEventListener('scroll', onScroll);
+
+    // Cleanup
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -39,7 +41,7 @@ export function Header(): JSX.Element {
     setIsMobileMenuOpen(false);
   };
 
-  const handleOpenWhatsApp = (_e: MouseEvent<HTMLButtonElement>) =>  WHATSAPP.openWhatsApp();
+  const handleOpenWhatsApp = (_e: MouseEvent<HTMLButtonElement>) => WHATSAPP.openWhatsApp();
 
   return (
     <motion.header
@@ -68,7 +70,7 @@ export function Header(): JSX.Element {
           </nav>
 
           <div className="hidden lg:block">
-            <Button onClick={handleOpenWhatsApp} className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button size="md"  onClick={handleOpenWhatsApp} className="bg-primary text-primary-foreground hover:bg-primary/90">
               Fale Conosco
             </Button>
           </div>

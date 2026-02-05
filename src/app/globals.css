@@ -219,7 +219,7 @@ body {
 
 /* Estilo do "polegar"*/
 ::-webkit-scrollbar-thumb {
-  background-color: #CE9D22;
+  background-color: #ce9d22;
   /* Cor de fundo do polegar */
   border-radius: 8px;
   /* Raio das bordas do polegar */
@@ -267,4 +267,9 @@ body {
 
 .read-the-docs {
   color: #888;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
 }

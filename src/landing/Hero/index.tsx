@@ -61,15 +61,16 @@ export function Hero(): JSX.Element {
 
             <motion.h1
               variants={itemVariants}
-              className="mb-6 font-display text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl"
+              className="mb-6 font-display text-4xl font-bold leading-none text-foreground md:text-5xl lg:text-6xl"
             >
-              Defendendo seus&nbsp;
+              Defendendo seus
+              <br />
               <span className="text-primary">direitos</span> com excelência e dedicação
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="mb-8 max-w-xl text-lg text-muted-foreground mx-auto lg:mx-0">
-              Assessoria jurídica personalizada em Direito do Trabalho e Civil, com foco em resultados e atendimento
-              humanizado.
+            <motion.p variants={itemVariants} className="mb-8 max-w-xl text-xl text-muted-foreground mx-auto lg:mx-0">
+              Assessoria jurídica personalizada em Direito do Trabalho e Civil. Compromisso com resultados e atendimento
+              humanizado para proteger o que é seu por direito.
             </motion.p>
 
             <motion.div
@@ -81,7 +82,7 @@ export function Hero(): JSX.Element {
                 onClick={openWhatsApp}
                 endIcon={ArrowRight}
                 classNameBtn="ml-2 transition-transform group-hover:translate-x-1"
-                className="group bg-primary text-primary-foreground hover:bg-primary/90"
+                className="group bg-primary text-primary-foreground hover:bg-primary/90 text-md font-medium"
               >
                 Agende sua Consulta
               </Button>
@@ -90,24 +91,24 @@ export function Hero(): JSX.Element {
                 size="lg"
                 variant="outline"
                 onClick={scrollToAbout}
-                className="border-primary/30 hover:bg-primary/5"
+                className="border-primary/30 hover:bg-primary/5 text-md font-medium"
               >
                 Conheça Nosso Trabalho
               </Button>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="mt-12 grid grid-cols-3 gap-6">
+            <motion.div variants={itemVariants} className="mt-12 grid grid-cols-3 gap-4">
               {[
-                { icon: Users, value: '500+', label: 'Clientes Atendidos' },
+                { icon: Users, value: '99+', label: 'Clientes Atendidos' },
                 { icon: Scale, value: '95%', label: 'Casos de Sucesso' },
-                { icon: Shield, value: '10+', label: 'Anos de Experiência' }
+                { icon: Shield, value: '5+', label: 'Anos de Experiência' }
               ].map(({ icon: Icon, value, label }) => (
                 <div key={label} className="text-center lg:text-left">
                   <div className="mb-1 flex items-center justify-center gap-2 lg:justify-start">
                     <Icon size={18} className="text-primary" />
                     <span className="font-display text-2xl font-bold text-foreground">{value}</span>
                   </div>
-                  <span className="text-xs text-muted-foreground">{label}</span>
+                  <span className="text-sm text-muted-foreground">{label}</span>
                 </div>
               ))}
             </motion.div>
@@ -120,7 +121,7 @@ export function Hero(): JSX.Element {
             className="hidden items-center justify-center lg:flex"
           >
             <div className="relative">
-              <div className="flex h-96 w-80 items-center justify-center rounded-3xl border border-primary/20 bg-linear-to-br from-primary/10 via-primary/5 to-transparent">
+              <div className="flex shadow-2xl shadow-primary/30 h-96 w-80 items-center justify-center rounded-3xl border border-primary/20 bg-linear-to-br from-primary/10 via-primary/5 to-transparent">
                 <div className="p-8 text-center">
                   <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full border-2 border-primary/30 bg-linear-to-br from-primary/20 to-primary/5">
                     <Scale size={48} className="text-primary" />

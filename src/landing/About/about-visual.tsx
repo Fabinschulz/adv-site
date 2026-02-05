@@ -32,7 +32,7 @@ export function AboutVisual(): JSX.Element {
               <Award size={24} className="text-primary" />
             </div>
             <div>
-              <p className="font-display text-lg font-bold">4+ Anos</p>
+              <p className="font-display text-lg font-bold">5+ Anos</p>
               <p className="text-xs text-muted-foreground">de Experiência</p>
             </div>
           </div>

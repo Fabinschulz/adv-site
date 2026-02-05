@@ -10,7 +10,6 @@ const WhatsAppIcon = () => (
 );
 
 const WhatsAppButton = () => {
-
   return (
     <motion.a
       href={WHATSAPP.whatsappUrl}

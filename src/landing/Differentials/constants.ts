@@ -25,7 +25,7 @@ export const DIFFERENTIALS: DifferentialItem[] = [
   {
     icon: Award,
     title: 'Experiência Comprovada',
-    description: 'Mais de 10 anos de atuação com alto índice de êxito.'
+    description: 'Mais de 5 anos de atuação com alto índice de êxito.'
   },
   {
     icon: MessageSquare,

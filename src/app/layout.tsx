@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Fábio Correa', url: 'https://github.com/Fabinschulz' }]
 };
 
-
 export default function RootLayout({
   children
 }: Readonly<{
