@@ -24,8 +24,9 @@ export function Areas(): JSX.Element {
             <h2 className="mb-4 font-display text-3xl font-bold md:text-4xl">
               Especialização em <span className="text-primary">duas áreas</span>
             </h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              Assessoria jurídica especializada em Direito do Trabalho e Civil, com atendimento personalizado.
+            <p className="mx-auto max-w-2xl text-muted-foreground text-lg font-normal">
+              Assessoria jurídica especializada em Direito do Trabalho e Civil, com atendimento personalizado para cada
+              demanda.
             </p>
           </motion.div>
 

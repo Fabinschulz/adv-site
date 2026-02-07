@@ -1,6 +1,6 @@
 'use client';
 
-import { WHATSAPP } from '@/utils';
+import { whatsappLink } from '@/utils';
 import { motion } from 'framer-motion';
 
 const WhatsAppIcon = () => (
@@ -12,7 +12,7 @@ const WhatsAppIcon = () => (
 const WhatsAppButton = () => {
   return (
     <motion.a
-      href={WHATSAPP.whatsappUrl}
+      href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 group"

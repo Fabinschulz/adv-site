@@ -34,16 +34,16 @@ export function Footer(): JSX.Element {
 
   return (
     <footer className="relative overflow-hidden bg-foreground text-background">
-      <div className="h-1 w-full bg-linear-to-r from-transparent via-primary to-transparent" />
+      <div className="h-1 w-full bg-linear-to-r from-transparent via-primary to-transparent " />
 
       <div className="container mx-auto px-4 py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <FooterSection>
             <div className="mb-6">
-              <Logo showText className="text-background" />
+              <Logo showText className="text-background" isFooter />
             </div>
 
-            <p className="mb-6 text-sm leading-relaxed text-background/70">
+            <p className="mb-6 text-md text-left text-background/70">
               Advocacia especializada em Direito do Trabalho e Civil, com atendimento humanizado e foco em resultados.
             </p>
 

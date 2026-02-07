@@ -1,10 +1,9 @@
 'use client';
 
 import { Button, Logo } from '@/components';
-import { WHATSAPP } from '@/utils/constants';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { JSX, MouseEvent, useEffect, useState } from 'react';
+import { JSX, useEffect, useState } from 'react';
 
 type NavLink = {
   href: string;
@@ -41,8 +40,6 @@ export function Header(): JSX.Element {
     setIsMobileMenuOpen(false);
   };
 
-  const handleOpenWhatsApp = (_e: MouseEvent<HTMLButtonElement>) => WHATSAPP.openWhatsApp();
-
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -70,7 +67,7 @@ export function Header(): JSX.Element {
           </nav>
 
           <div className="hidden lg:block">
-            <Button size="md"  onClick={handleOpenWhatsApp} className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button size="md" className="bg-primary text-primary-foreground hover:bg-primary/90 px-4" isBtnLink>
               Fale Conosco
             </Button>
           </div>
@@ -93,7 +90,7 @@ export function Header(): JSX.Element {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden border-t border-border bg-background"
           >
-            <nav className="container mx-auto flex flex-col gap-4 px-4 py-6">
+            <nav className="container mx-auto flex flex-col gap-4 px-4 py-6 border-b border-border">
               {NAV_LINKS.map(({ href, label }) => (
                 <button
                   key={href}
@@ -104,7 +101,9 @@ export function Header(): JSX.Element {
                 </button>
               ))}
 
-              <Button onClick={handleOpenWhatsApp}>Fale Conosco</Button>
+              <Button size="md" className="bg-primary text-primary-foreground hover:bg-primary/90 px-4" isBtnLink>
+                Fale Conosco
+              </Button>
             </nav>
           </motion.div>
         )}

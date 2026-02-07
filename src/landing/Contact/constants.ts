@@ -1,7 +1,5 @@
 import { Clock, Mail, MapPin } from 'lucide-react';
-import { ContactInfoItem } from './types';
-
-export const CONTACT_INFO: ContactInfoItem[] = [
+export const CONTACT_INFO = [
   {
     icon: MapPin,
     title: 'Endereço',

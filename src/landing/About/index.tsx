@@ -1,8 +1,8 @@
 'use client';
 
+import { containerVariants, itemVariants } from '@/utils';
 import { motion, useInView } from 'framer-motion';
 import { JSX, useRef } from 'react';
-import { containerVariants, itemVariants } from '../../utils/animations/variants';
 import { AboutVisual } from './about-visual';
 import { CREDENTIALS } from './constants';
 import { CredentialCard } from './credential-card';

@@ -4,7 +4,6 @@ import { motion, Variants } from 'framer-motion';
 import { ArrowRight, Scale, Shield, Users } from 'lucide-react';
 
 import { Button } from '@/components';
-import { WHATSAPP } from '@/utils';
 import { JSX } from 'react';
 
 const containerVariants: Variants = {
@@ -28,8 +27,6 @@ const itemVariants: Variants = {
 };
 
 export function Hero(): JSX.Element {
-  const openWhatsApp = (): void => WHATSAPP.openWhatsApp();
-
   const scrollToAbout = (): void => {
     document.querySelector('#sobre')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -79,10 +76,10 @@ export function Hero(): JSX.Element {
             >
               <Button
                 size="lg"
-                onClick={openWhatsApp}
                 endIcon={ArrowRight}
-                classNameBtn="ml-2 transition-transform group-hover:translate-x-1"
-                className="group bg-primary text-primary-foreground hover:bg-primary/90 text-md font-medium"
+                iconStyleOverrides="ml-2 duration-300 ease-out group-hover:translate-x-1"
+                className="group bg-primary text-primary-foreground hover:bg-primary/90 text-md font-medium shadow-lg shadow-primary/25"
+                isBtnLink
               >
                 Agende sua Consulta
               </Button>

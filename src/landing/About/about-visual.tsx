@@ -9,7 +9,7 @@ export function AboutVisual(): JSX.Element {
   return (
     <motion.div variants={itemVariants} className="order-2 lg:order-1">
       <div className="relative">
-        <div className="aspect-4/5 overflow-hidden rounded-3xl border border-primary/20 bg-linear-to-br from-primary/10 via-primary/5 to-transparent">
+        <div className="shadow-2xl shadow-primary/25 aspect-4/5 overflow-hidden rounded-3xl border border-primary/20 bg-linear-to-br from-primary/10 via-primary/5 to-transparent">
           <div className="flex h-full items-center justify-center p-8 text-center">
             <div>
               <div className="mx-auto mb-6 flex h-40 w-40 items-center justify-center rounded-full border-4 border-primary/20 bg-linear-to-br from-primary/30 to-primary/10">

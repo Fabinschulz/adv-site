@@ -6,9 +6,10 @@ import { JSX } from 'react';
 export interface LogoProps {
   className?: string;
   showText?: boolean;
+  isFooter?: boolean;
 }
 
-export function Logo({ className = '', showText = true }: LogoProps): JSX.Element {
+export function Logo({ className = '', showText = true, isFooter = false }: LogoProps): JSX.Element {
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -39,7 +40,11 @@ export function Logo({ className = '', showText = true }: LogoProps): JSX.Elemen
 
       {showText && (
         <div className="flex flex-col leading-none">
-          <span className="font-display text-xl font-semibold tracking-wide text-foreground">Mariana</span>
+          <span
+            className={`font-display font-semibold tracking-wide text-foreground ${isFooter ? 'text-lg text-white' : 'text-xl'}`}
+          >
+            Mariana
+          </span>
           <span className="font-body text-xs uppercase tracking-[0.2em] text-muted-foreground">Advocacia</span>
         </div>
       )}

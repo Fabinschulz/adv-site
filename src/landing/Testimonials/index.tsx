@@ -27,7 +27,9 @@ export function Testimonials(): JSX.Element {
             <h2 className="mb-4 font-display text-3xl font-bold md:text-4xl">
               O que nossos <span className="text-primary">clientes</span> dizem
             </h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground">A confiança de quem já contou com nosso trabalho.</p>
+            <p className="mx-auto max-w-2xl text-muted-foreground text-lg">
+              Confira os depoimentos de quem já confiou em nosso trabalho para defender seus direitos.
+            </p>
           </motion.div>
 
           <div className="hidden gap-6 md:grid md:grid-cols-3">

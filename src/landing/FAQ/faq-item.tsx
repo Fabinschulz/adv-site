@@ -15,7 +15,7 @@ export function FAQAccordionItem({ item, index }: Props): JSX.Element {
                  data-[state=open]:border-primary/30
                  data-[state=open]:shadow-gold"
     >
-      <AccordionTrigger className="py-5 text-left font-semibold text-foreground hover:text-primary hover:no-underline">
+      <AccordionTrigger className="py-5 text-left font-semibold text-foreground hover:text-primary hover:no-underline font-display">
         {item.question}
       </AccordionTrigger>
 

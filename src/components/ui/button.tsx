@@ -2,7 +2,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
-import { cn } from '@/utils';
+import { cn, whatsappLink } from '@/utils';
 import { LucideIcon } from 'lucide-react';
 
 const buttonVariants = cva(
@@ -24,6 +24,7 @@ const buttonVariants = cva(
         sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5',
         md: 'h-10 rounded-md px-6 has-[>svg]:px-4 text-base',
         lg: 'h-11 rounded-md px-10 has-[>svg]:px-4',
+        xl: 'h-12 rounded-md px-12 has-[>svg]:px-4 text-lg',
         icon: 'size-9',
         'icon-sm': 'size-8',
         'icon-lg': 'size-10'
@@ -41,26 +42,28 @@ export type IButtonProps = React.ComponentProps<'button'> &
     asChild?: boolean;
     startIcon?: LucideIcon;
     endIcon?: LucideIcon;
-    classNameBtn?: string;
+    iconStyleOverrides?: string;
+    isBtnLink?: boolean;
   };
 
 const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
   (
     {
       className,
-      classNameBtn,
+      iconStyleOverrides,
       variant = 'default',
       size = 'default',
       asChild = false,
       startIcon: StartIcon,
       endIcon: EndIcon,
+      isBtnLink = false,
       ...props
     },
     ref
   ) => {
     const Comp = asChild ? Slot : 'button';
 
-    return (
+    const CompRoot = () => (
       <Comp
         data-slot="button"
         data-variant={variant}
@@ -70,10 +73,22 @@ const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
         ref={ref}
         {...props}
       >
-        {StartIcon && <StartIcon className={cn('mr-0.5', classNameBtn)} />}
+        {StartIcon && <StartIcon className={cn('mr-0.5', iconStyleOverrides)} />}
         {props.children}
-        {EndIcon && <EndIcon className={cn('ml-0.5', classNameBtn)} />}
+        {EndIcon && <EndIcon className={cn('ml-0.5', iconStyleOverrides)} />}
       </Comp>
+    );
+
+    return (
+      <>
+        {isBtnLink ? (
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+            <CompRoot />
+          </a>
+        ) : (
+          <CompRoot />
+        )}
+      </>
     );
   }
 );

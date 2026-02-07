@@ -28,8 +28,9 @@ export function Differentials(): JSX.Element {
             <h2 className="mb-4 font-display text-3xl font-bold md:text-4xl">
               Nossos <span className="text-primary">diferenciais</span>
             </h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              Um serviço jurídico focado em resultados e confiança.
+            <p className="mx-auto max-w-2xl text-muted-foreground text-lg">
+              Tenha um serviço jurídico diferenciado, focado em resultados e confiança. Conheça os principais
+              diferenciais que fazem a diferença na sua experiência.
             </p>
           </motion.div>
 

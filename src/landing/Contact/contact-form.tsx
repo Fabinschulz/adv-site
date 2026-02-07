@@ -1,84 +1,124 @@
 'use client';
 
 import { Button, Input, Textarea } from '@/components';
-import { WHATSAPP } from '@/utils';
 import { MessageCircle, Send } from 'lucide-react';
-import { ChangeEvent, FormEvent, useState } from 'react';
-import { ContactFormData } from './types';
+import { useState } from 'react';
 
-export const ContactForm = () => {
-  const [formData, setFormData] = useState<ContactFormData>({
+type FormData = {
+  name: string;
+  phone: string;
+  subject: string;
+  message: string;
+};
+
+const ContactForm = () => {
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: '',
     subject: '',
     message: ''
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const message = encodeURIComponent(
+      `Olá! Me chamo ${formData.name}.\n\nAssunto: ${formData.subject}\n\nMensagem: ${formData.message}\n\nTelefone: ${formData.phone}`
+    );
+    window.open(`https://wa.me/5511932142673?text=${message}`, '_blank');
   };
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-
-    WHATSAPP.openWhatsApp(
-      `Olá! Me chamo ${formData.name}.\n\n` +
-        `Assunto: ${formData.subject}\n\n` +
-        `Mensagem: ${formData.message}\n\n` +
-        `Telefone: ${formData.phone}`
-    );
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-4xl border border-black/10 p-10 shadow-sm">
-      <InputField label="Nome Completo" name="name" value={formData.name} onChange={handleChange} />
-      <InputField label="Telefone / WhatsApp" name="phone" value={formData.phone} onChange={handleChange} />
-      <InputField label="Assunto" name="subject" value={formData.subject} onChange={handleChange} />
+    <form onSubmit={handleSubmit} className="bg-card rounded-3xl border border-border p-8">
+      <h3 className="font-display text-xl font-semibold text-foreground mb-6">Envie sua mensagem</h3>
+
+      <div className="grid sm:grid-cols-2 gap-4 mb-4">
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+            Nome Completo
+          </label>
+          <Input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Seu nome"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="bg-background border-border focus:border-primary"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+            Telefone / WhatsApp
+          </label>
+          <Input
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="(11) 99999-9999"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+            className="bg-background border-border focus:border-primary"
+          />
+        </div>
+      </div>
 
       <div className="mb-4">
-        <label className="block text-sm font-semibold mb-2 text-neutral-900">Mensagem</label>
+        <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+          Assunto
+        </label>
+        <Input
+          id="subject"
+          name="subject"
+          type="text"
+          placeholder="Ex: Consulta sobre processo trabalhista"
+          value={formData.subject}
+          onChange={handleChange}
+          required
+          className="bg-background border-border focus:border-primary"
+        />
+      </div>
+
+      <div className="mb-6">
+        <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+          Mensagem
+        </label>
         <Textarea
+          id="message"
           name="message"
+          placeholder="Descreva brevemente sua situação..."
           value={formData.message}
           onChange={handleChange}
           required
-          className="rounded-lg border border-black/30 px-4 py-3 text-sm"
-          rows={5}
+          rows={4}
+          className="bg-background border-border focus:border-primary resize-none"
         />
       </div>
 
       <Button
         type="submit"
-        className="w-full mt-6 h-12 bg-[#D4A528] hover:bg-[#C29620] text-white font-semibold rounded-xl flex items-center justify-center gap-2"
+        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-gold group"
+        size="lg"
       >
-        <MessageCircle size={18} className="mr-2" />
+        <MessageCircle size={20} className="mr-2" />
         Enviar via WhatsApp
-        <Send size={14} className="ml-2" />
+        <Send size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
       </Button>
+
+      <p className="text-xs text-muted-foreground text-center mt-4">
+        Ao enviar, você será redirecionado para o WhatsApp com sua mensagem.
+      </p>
     </form>
   );
 };
 
-const InputField = ({
-  label,
-  name,
-  value,
-  onChange
-}: {
-  label: string;
-  name: string;
-  value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-}) => (
-  <div className="mb-4">
-    <label className="block text-sm font-semibold mb-2 text-neutral-900">{label}</label>
-    <Input
-      name={name}
-      value={value}
-      onChange={onChange}
-      required
-      className="h-12 rounded-lg border border-black/30 px-4 text-sm focus:ring-0 focus:border-black"
-    />
-  </div>
-);
+export { ContactForm };

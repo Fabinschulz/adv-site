@@ -24,8 +24,9 @@ export function FAQ(): JSX.Element {
             <h2 className="mb-4 font-display text-3xl font-bold md:text-4xl">
               Tire suas <span className="text-primary">dúvidas</span>
             </h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              As respostas para as dúvidas mais comuns sobre nossos serviços.
+            <p className="mx-auto max-w-2xl text-muted-foreground text-lg">
+              Respondo suas dúvidas mais comuns sobre processos trabalhistas e cíveis. Não encontrou o que procura?
+              Entre em contato.
             </p>
           </motion.div>
 

@@ -1,8 +1,8 @@
 'use client';
 
+import { itemVariants } from '@/utils';
 import { motion } from 'framer-motion';
 import { JSX } from 'react';
-import { itemVariants } from '../../utils/animations/variants';
 import { Credential } from './constants';
 
 type AboutCardProps = {
@@ -21,7 +21,7 @@ export function CredentialCard({ data }: AboutCardProps): JSX.Element {
         <Icon size={20} className="text-primary" />
       </div>
       <div>
-        <h4 className="mb-1 text-sm font-semibold text-foreground">{data.title}</h4>
+        <h4 className="mb-1 text-sm font-semibold text-foreground font-display">{data.title}</h4>
         <p className="text-xs text-muted-foreground">{data.description}</p>
       </div>
     </motion.div>
