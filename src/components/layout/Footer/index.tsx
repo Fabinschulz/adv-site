@@ -54,6 +54,7 @@ export function Footer(): JSX.Element {
                   href={href}
                   aria-label={label}
                   className="flex h-10 w-10 items-center justify-center rounded-lg bg-background/10 transition-colors hover:bg-primary/20"
+                  target="_blank"
                 >
                   <Icon size={18} className="text-background/80" />
                 </a>

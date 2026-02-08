@@ -1,4 +1,5 @@
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { whatsappLink } from '@/utils';
+import { Instagram, Linkedin, Phone } from 'lucide-react';
 
 export type NavLink = {
   href: string;
@@ -26,6 +27,6 @@ export const SERVICES: string[] = [
 
 export const SOCIAL_LINKS = [
   { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Facebook, href: '#', label: 'Facebook' }
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/mariana-gon%C3%A7alves-2558a7218/', label: 'LinkedIn' },
+  { icon: Phone, href: whatsappLink, label: 'WhatsApp' },
 ];
