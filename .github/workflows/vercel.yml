@@ -2,9 +2,8 @@ name: CI/CD - Vercel
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches: [master]
+  workflow_dispatch:
 
 jobs:
   ci:
