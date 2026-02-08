@@ -18,18 +18,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-
-      - name: Ativar pnpm
-        run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
+          cache: 'npm'
 
       - name: Instalar dependências
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Build do projeto
-        run: pnpm build
+        run: npm run build
 
   cd:
     name: Deploy to Vercel
@@ -47,13 +42,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Ativar pnpm
-        run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
-
       - name: Instalar Vercel CLI
-        run: pnpm add -g vercel
+        run: npm install -g vercel
 
       - name: Pull Vercel Environment
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
