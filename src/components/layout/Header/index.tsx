@@ -16,7 +16,8 @@ const NAV_LINKS: NavLink[] = [
   { href: '#areas', label: 'Áreas de Atuação' },
   { href: '#diferenciais', label: 'Diferenciais' },
   { href: '#depoimentos', label: 'Depoimentos' },
-  { href: '#faq', label: 'FAQ' }
+  { href: '#faq', label: 'FAQ' },
+  { href: '#contato', label: 'Contato' },
 ];
 
 export function Header(): JSX.Element {
@@ -24,6 +25,8 @@ export function Header(): JSX.Element {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
+    if(typeof window === 'undefined') return;
+    
     const onScroll = (): void => {
       setIsScrolled(window.scrollY > 50);
     };

@@ -63,7 +63,7 @@ const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
   ) => {
     const Comp = asChild ? Slot : 'button';
 
-    const CompRoot = () => (
+    return (
       <Comp
         data-slot="button"
         data-variant={variant}
@@ -73,22 +73,21 @@ const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
         ref={ref}
         {...props}
       >
-        {StartIcon && <StartIcon className={cn('mr-0.5', iconStyleOverrides)} />}
-        {props.children}
-        {EndIcon && <EndIcon className={cn('ml-0.5', iconStyleOverrides)} />}
-      </Comp>
-    );
-
-    return (
-      <>
-        {isBtnLink ? (
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-            <CompRoot />
+        {isBtnLink && (
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center">
+            {StartIcon && <StartIcon className={cn('mr-0.5', iconStyleOverrides)} />}
+            {props.children}
+            {EndIcon && <EndIcon className={cn('ml-0.5', iconStyleOverrides)} />}
           </a>
-        ) : (
-          <CompRoot />
         )}
-      </>
+        {!isBtnLink && (
+          <>
+            {StartIcon && <StartIcon className={cn('mr-0.5', iconStyleOverrides)} />}
+            {props.children}
+            {EndIcon && <EndIcon className={cn('ml-0.5', iconStyleOverrides)} />}
+          </>
+        )}
+      </Comp>
     );
   }
 );

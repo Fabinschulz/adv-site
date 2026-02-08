@@ -43,7 +43,7 @@ export const InputField: React.FC<InputFieldProps> = ({
   return (
     <div className="flex flex-col gap-1">
       {labelWithRequired && (
-        <Label htmlFor={name} className="text-sm font-medium">
+        <Label htmlFor={name} className="block text-sm font-medium text-foreground mb-2">
           {labelWithRequired}
         </Label>
       )}
@@ -56,10 +56,12 @@ export const InputField: React.FC<InputFieldProps> = ({
         aria-invalid={!!errorsMessage}
         {...register(name)}
         onChange={handleOnChange}
+        className="bg-background border-border focus:border-primary"
+        required={required}
         {...props}
       />
 
-      {!!errorsMessage && <span className="text-sm italic text-destructive">{errorsMessage}</span>}
+      {!!errorsMessage && <span className="text-sm italic text-red-600">{errorsMessage}</span>}
     </div>
   );
 };

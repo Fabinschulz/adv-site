@@ -22,7 +22,7 @@ function Input({
   const iconColor = error ? 'text-destructive' : 'text-muted-foreground';
 
   return (
-    <div className="relative flex items-center w-full sm:max-w-sm md:max-w-md lg:max-w-lg ">
+    <div className="relative flex items-center w-full">
       {StartIcon && <StartIcon className={cn('pointer-events-none absolute left-3 h-4 w-4', iconColor)} />}
       <input
         data-testid={`input-${id}`}
