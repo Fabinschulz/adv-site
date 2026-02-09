@@ -37,12 +37,13 @@ jobs:
         run: pnpm add -g vercel
 
       - name: Pull Vercel Environment
-        run: vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build do projeto
-        run: vercel build --prod --token=$VERCEL_TOKEN
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Upload Build Artifact
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: vercel-build-output
@@ -55,8 +56,6 @@ jobs:
     needs: build-and-test
     if: github.ref == 'refs/heads/master'
     environment: Production
-    env:
-      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
@@ -76,4 +75,7 @@ jobs:
         run: pnpm add -g vercel
 
       - name: Deploy para produção
-        run: vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
