@@ -1,0 +1,16 @@
+{
+  "name": "Mariana Advocacia | Advocacia em Extrema",
+  "short_name": "Mariana Advocacia",
+  "description": "Escritório de advocacia em Extrema especializado em direito civil, trabalhista e familiar. Atendimento personalizado e consultoria jurídica.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#DAA520",
+  "icons": [
+    {
+      "src": "/apple-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

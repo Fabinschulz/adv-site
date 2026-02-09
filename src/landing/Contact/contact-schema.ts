@@ -8,13 +8,10 @@ export const contactSchema = z.object({
 });
 
 export const defaultValues: ContactFormData = {
-    name: '',
-    phone: '',
-    subject: '',
-    message: ''
-
+  name: '',
+  phone: '',
+  subject: '',
+  message: ''
 };
 
 export type ContactFormData = z.infer<typeof contactSchema>;
-
-    
