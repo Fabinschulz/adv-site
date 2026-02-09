@@ -124,7 +124,7 @@ export function Hero(): JSX.Element {
                     <Scale size={48} className="text-primary" />
                   </div>
                   <h3 className="mb-2 font-display text-xl font-semibold">Dra. Mariana</h3>
-                  <p className="text-sm text-muted-foreground">OAB/SP 000.000</p>
+                  <p className="text-sm text-muted-foreground">OAB/MG 000.000</p>
                   <div className="mt-4 flex justify-center gap-2">
                     <span className="rounded-full bg-primary/10 px-3 py-1 text-xs text-primary">Trabalhista</span>
                     <span className="rounded-full bg-primary/10 px-3 py-1 text-xs text-primary">Civil</span>

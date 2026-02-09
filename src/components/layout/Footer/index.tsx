@@ -111,7 +111,7 @@ export function Footer(): JSX.Element {
         <div className="mt-12 border-t border-background/10 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-background/50">© {year} Mariana Advocacia. Todos os direitos reservados.</p>
-            <p className="text-sm text-background/50">OAB/SP 000.000</p>
+            <p className="text-sm text-background/50">OAB/MG 000.000</p>
           </div>
         </div>
       </div>

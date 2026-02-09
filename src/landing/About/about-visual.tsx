@@ -17,7 +17,7 @@ export function AboutVisual(): JSX.Element {
               </div>
               <h3 className="mb-1 font-display text-2xl font-semibold">Dra. Mariana</h3>
               <p className="text-muted-foreground">Advogada</p>
-              <p className="mt-2 text-sm text-primary">OAB/SP 000.000</p>
+              <p className="mt-2 text-sm text-primary">OAB/MG 000.000</p>
             </div>
           </div>
         </div>
