@@ -1,15 +1,16 @@
-'use client';
-
+import dynamic from 'next/dynamic';
 import React from 'react';
-import { Footer, Header } from '../layout';
 import { WhatsAppButton } from '../whatsApp';
+
+const HeaderLazyLoad = dynamic(() => import('../layout/Header').then((mod) => mod.Header), { ssr: !!false });
+const LazyLoadedFooter = dynamic(() => import('../layout/Footer').then((mod) => mod.Footer), { ssr: !!false });
 
 export const ClientProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HeaderLazyLoad />
       <main>{children}</main>
-      <Footer />
+      <LazyLoadedFooter />
       <WhatsAppButton />
     </div>
   );
