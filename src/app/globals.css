@@ -203,13 +203,6 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-@media screen and (max-width: 820px) {
-  html,
-  body {
-    overflow: auto;
-  }
-}
-
 /* Estilo da barra de rolagem */
 ::-webkit-scrollbar {
   width: 6px;

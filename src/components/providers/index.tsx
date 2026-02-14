@@ -1,3 +1,4 @@
+import { domMax, LazyMotion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { WhatsAppButton } from '../whatsApp';
@@ -7,11 +8,13 @@ const LazyLoadedFooter = dynamic(() => import('../layout/Footer').then((mod) => 
 
 export const ClientProvider = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="min-h-screen bg-background">
-      <HeaderLazyLoad />
-      <main>{children}</main>
-      <LazyLoadedFooter />
-      <WhatsAppButton />
-    </div>
+    <LazyMotion features={domMax}>
+      <div className="min-h-screen bg-background">
+        <HeaderLazyLoad />
+        <main>{children}</main>
+        <LazyLoadedFooter />
+        <WhatsAppButton />
+      </div>
+    </LazyMotion>
   );
 };

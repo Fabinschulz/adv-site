@@ -47,7 +47,7 @@ function SelectTrigger({
       data-testid={`select-${name}-id`}
       data-size={size}
       className={cn(
-        `border-input data-[placeholder]:text-muted-foreground 
+        `border-input data-placeholder:text-muted-foreground
         [&_svg:not([class*='text-'])]:text-muted-foreground 
         focus-visible:border-ring focus-visible:ring-ring/50 
         aria-invalid:ring-destructive/20 
@@ -109,7 +109,7 @@ function SelectContent({
           data-[side=top]:slide-in-from-bottom-2 
           relative z-50 
           max-h-(--radix-select-content-available-height) 
-          min-w-[8rem] 
+          min-w-32
           origin-(--radix-select-content-transform-origin) 
           overflow-x-hidden 
           overflow-y-auto 
@@ -127,7 +127,7 @@ function SelectContent({
           className={cn(
             'p-1',
             position === 'popper' &&
-              'h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)] scroll-my-1'
+              'h-(--radix-select-trigger-height) w-full min-w-(--radix-select-trigger-width) scroll-my-1'
           )}
         >
           {children}
@@ -164,8 +164,8 @@ function SelectItem({ className, children, value, ...props }: React.ComponentPro
         py-1.5 pr-8 pl-2 
         text-sm outline-hidden 
         select-none 
-        data-[disabled]:pointer-events-none 
-        data-[disabled]:opacity-50 
+        data-disabled:pointer-events-none
+        data-disabled:opacity-50
         [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 
         *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2
         text-ellipsis overflow-hidden whitespace-nowrap`,

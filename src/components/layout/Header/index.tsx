@@ -38,9 +38,19 @@ export function Header(): JSX.Element {
   }, []);
 
   const handleScrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    const id = href.replace('#', '');
+    const element = document.getElementById(id);
+
     setIsMobileMenuOpen(false);
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        element?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
   };
 
   return (
@@ -91,7 +101,7 @@ export function Header(): JSX.Element {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-border bg-background"
+            className="lg:hidden border-t border-border bg-background shadow-xl"
           >
             <nav className="container mx-auto flex flex-col gap-4 px-4 py-6 border-b border-border">
               {NAV_LINKS.map(({ href, label }) => (

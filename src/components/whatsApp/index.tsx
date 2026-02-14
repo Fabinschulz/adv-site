@@ -1,7 +1,7 @@
 'use client';
 
 import { whatsappLink } from '@/utils';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 const WhatsAppIcon = () => (
   <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
@@ -11,11 +11,11 @@ const WhatsAppIcon = () => (
 
 const WhatsAppButton = () => {
   return (
-    <motion.a
+    <m.a
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 group"
+      className="fixed bottom-6 right-6 z-50 group transform-gpu"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1, duration: 0.3 }}
@@ -23,24 +23,24 @@ const WhatsAppButton = () => {
     >
       <span className="absolute inset-0 w-14 h-14 bg-[#25D366] rounded-full animate-ping opacity-30" />
 
-      <motion.div
-        className="absolute -top-2 -left-2 z-10 bg-white text-[#25D366] text-xs font-semibold px-2 py-0.5 rounded-full shadow-md flex items-center gap-1"
+      <m.div
+        className="absolute -top-2 -left-2 z-10 bg-white text-[#25D366] text-xs font-semibold px-2 py-0.5 rounded-full shadow-md flex items-center gap-1 pointer-events-none"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.3, duration: 0.3 }}
       >
         <span className="w-2 h-2 bg-[#25D366] rounded-full animate-pulse" />
         Online
-      </motion.div>
+      </m.div>
 
-      <motion.div
-        className="relative w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow"
-        whileHover={{ scale: 1.1 }}
+      <m.div
+        className="relative w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow transform-gpu"
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
         <WhatsAppIcon />
-      </motion.div>
-    </motion.a>
+      </m.div>
+    </m.a>
   );
 };
 

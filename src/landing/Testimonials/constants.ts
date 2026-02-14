@@ -13,13 +13,13 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5
   },
   {
-    name: 'Ana Paula',
+    name: 'Ana Clara',
     role: 'Professora',
     content: 'Profissional extremamente competente e atenciosa. Me manteve informada durante todo o processo.',
     rating: 5
   },
   {
-    name: 'Fabio Correa',
+    name: 'Fabio Jr.',
     role: 'Bancário',
     content: 'Tive uma ótima experiência, recomendo seus serviços a todos.',
     rating: 5
