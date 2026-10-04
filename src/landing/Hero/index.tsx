@@ -132,35 +132,23 @@ export function Hero(): JSX.Element {
                 </div>
               </div>
 
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -left-6 -top-6 flex h-20 w-20 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10"
-              >
+              <div className="absolute -left-6 -top-6 flex h-20 w-20 animate-float-up items-center justify-center rounded-2xl border border-primary/20 bg-primary/10">
                 <Shield size={28} className="text-primary" />
-              </motion.div>
+              </div>
 
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2.5, repeat: Infinity }}
-                className="absolute -bottom-4 -right-4 flex h-16 w-16 items-center justify-center rounded-xl border border-primary/20 bg-primary/10"
-              >
+              <div className="absolute -bottom-4 -right-4 flex h-16 w-16 animate-float-down items-center justify-center rounded-xl border border-primary/20 bg-primary/10">
                 <Users size={24} className="text-primary" />
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
       </div>
 
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-scroll-hint">
         <div className="flex h-10 w-6 justify-center rounded-full border-2 border-primary/30">
           <div className="mt-2 h-3 w-1.5 rounded-full bg-primary" />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

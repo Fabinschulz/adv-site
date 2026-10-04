@@ -22,11 +22,7 @@ export function AboutVisual(): JSX.Element {
           </div>
         </div>
 
-        <motion.div
-          animate={{ y: [0, -5, 0] }}
-          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -bottom-6 -right-6 rounded-2xl border border-primary/20 bg-background p-4 shadow-gold-lg"
-        >
+        <div className="absolute -bottom-6 -right-6 animate-float-up-sm rounded-2xl border border-primary/20 bg-background p-4 shadow-gold-lg">
           <div className="flex items-center gap-3">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
               <Award size={24} className="text-primary" />
@@ -36,7 +32,7 @@ export function AboutVisual(): JSX.Element {
               <p className="text-xs text-muted-foreground">de Experiência</p>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   );

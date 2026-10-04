@@ -29,6 +29,31 @@
   --radius-lg: var(--radius);
 }
 
+@theme {
+  --animate-float-up: float-up 3s ease-in-out infinite;
+  --animate-float-up-sm: float-up-sm 3s ease-in-out infinite;
+  --animate-float-down: float-down 2.5s ease-in-out infinite;
+  --animate-scroll-hint: float-down 1.5s ease-in-out infinite;
+
+  @keyframes float-up {
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes float-up-sm {
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes float-down {
+    50% {
+      transform: translateY(10px);
+    }
+  }
+}
+
 :root {
   --background: 0 0% 100%;
   --foreground: 0 0% 10%;
