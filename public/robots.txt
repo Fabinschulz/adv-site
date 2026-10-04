@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://adv-mariana.vercel.app/sitemap.xml
+Sitemap: https://www.adv-mariana.com.br/sitemap.xml
