@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.adv-mariana.com.br/sitemap.xml
+Sitemap: https://www.advmariana.com.br/sitemap.xml

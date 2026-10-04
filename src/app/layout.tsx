@@ -8,7 +8,7 @@ const playfair = Playfair_Display({ subsets: ['latin'], display: 'swap', variabl
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter', preload: false });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.adv-mariana.com.br'),
+  metadataBase: new URL('https://www.advmariana.com.br'),
   alternates: { canonical: '/' },
   title: 'Advocacia em Extrema | Mariana Advocacia',
   description:
