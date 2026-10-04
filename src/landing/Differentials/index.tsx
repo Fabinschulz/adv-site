@@ -16,8 +16,8 @@ export function Differentials(): JSX.Element {
       id="diferenciais"
       className="relative overflow-hidden bg-linear-to-b from-secondary/30 to-background py-24"
     >
-      <div className="absolute left-0 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
-      <div className="absolute right-0 top-1/3 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+      <div className="glow-orb absolute left-0 top-1/2 h-72 w-72 -translate-y-1/2" />
+      <div className="glow-orb absolute right-0 top-1/3 h-96 w-96" />
 
       <div className="container relative z-10 mx-auto px-4">
         <motion.div ref={ref} variants={containerVariants} initial="hidden" animate={isInView ? 'visible' : 'hidden'}>

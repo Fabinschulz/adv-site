@@ -35,8 +35,8 @@ export function Hero(): JSX.Element {
     <section id="inicio" className="relative flex min-h-screen items-center overflow-hidden pt-20">
       <div className="absolute inset-0 bg-linear-to-br from-secondary via-background to-accent/30" />
 
-      <div className="absolute right-0 top-1/4 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
+      <div className="glow-orb absolute right-0 top-1/4 h-96 w-96" />
+      <div className="glow-orb absolute bottom-1/4 left-0 h-80 w-80" />
 
       <div className="absolute right-1/4 top-0 h-40 w-px bg-linear-to-b from-transparent via-primary/30 to-transparent" />
       <div className="absolute bottom-0 left-1/3 h-32 w-px bg-linear-to-t from-transparent via-primary/30 to-transparent" />

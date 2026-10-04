@@ -219,6 +219,27 @@
   .shadow-gold-lg {
     box-shadow: 0 10px 40px -10px hsl(var(--gold) / 0.4);
   }
+
+  /*
+   * Brilho difuso equivalente a `rounded-full bg-primary/5 blur-3xl`, desenhado como gradiente
+   * radial em vez de filter: blur(64px), que exige uma camada de GPU grande por orb e reaplicação
+   * do filtro na composição. O pseudo-elemento se estende 2σ (8rem) além do círculo, como o blur,
+   * e as paradas seguem o perfil gaussiano da borda desfocada (σ = 4rem).
+   */
+  .glow-orb::before {
+    content: '';
+    position: absolute;
+    inset: -8rem;
+    pointer-events: none;
+    background: radial-gradient(
+      circle closest-side,
+      hsl(var(--primary) / 0.05) 0,
+      hsl(var(--primary) / 0.042) calc(100% - 12rem),
+      hsl(var(--primary) / 0.025) calc(100% - 8rem),
+      hsl(var(--primary) / 0.008) calc(100% - 4rem),
+      transparent 100%
+    );
+  }
 }
 
 html,

@@ -13,7 +13,7 @@ export function FAQ(): JSX.Element {
 
   return (
     <section id="faq" className="relative overflow-hidden bg-secondary/30 py-24">
-      <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
+      <div className="glow-orb absolute bottom-0 right-0 h-80 w-80" />
 
       <div className="container relative z-10 mx-auto px-4">
         <motion.div ref={ref} variants={containerVariants} initial="hidden" animate={isInView ? 'visible' : 'hidden'}>

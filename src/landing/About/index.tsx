@@ -13,8 +13,8 @@ export function About(): JSX.Element {
 
   return (
     <section id="sobre" className="relative overflow-hidden bg-secondary/30 py-24">
-      <div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
-      <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
+      <div className="glow-orb absolute left-0 top-0 h-64 w-64" />
+      <div className="glow-orb absolute bottom-0 right-0 h-80 w-80" />
 
       <div className="container relative z-10 mx-auto px-4">
         <motion.div

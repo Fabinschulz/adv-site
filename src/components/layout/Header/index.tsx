@@ -59,7 +59,7 @@ export function Header(): JSX.Element {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+        isScrolled ? 'bg-background shadow-sm' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4">
