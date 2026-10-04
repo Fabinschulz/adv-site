@@ -1,30 +1,11 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
 import { ArrowRight, Scale, Shield, Users } from 'lucide-react';
 
 import { Button } from '@/components';
-import { JSX } from 'react';
+import { CSSProperties, JSX } from 'react';
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3
-    }
-  }
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 }
-  }
-};
+const enterDelay = (index: number): CSSProperties => ({ animationDelay: `${0.3 + index * 0.2}s` });
 
 export function Hero(): JSX.Element {
   const scrollToAbout = (): void => {
@@ -43,36 +24,34 @@ export function Hero(): JSX.Element {
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="text-center lg:text-left"
-          >
-            <motion.div variants={itemVariants} className="mb-4">
+          <div className="animate-hero-fade text-center lg:text-left">
+            <div className="mb-4 animate-hero-item" style={enterDelay(0)}>
               <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
                 <Scale size={16} />
                 Especialista em Direito do Trabalho e Civil
               </span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              variants={itemVariants}
-              className="mb-6 font-display text-4xl font-bold leading-none text-foreground md:text-5xl lg:text-6xl"
+            <h1
+              className="mb-6 animate-hero-item font-display text-4xl font-bold leading-none text-foreground md:text-5xl lg:text-6xl"
+              style={enterDelay(1)}
             >
               Defendendo seus
               <br />
               <span className="text-primary">direitos</span> com excelência e dedicação
-            </motion.h1>
+            </h1>
 
-            <motion.p variants={itemVariants} className="mb-8 max-w-xl text-xl text-muted-foreground mx-auto lg:mx-0">
+            <p
+              className="mb-8 max-w-xl animate-hero-item text-xl text-muted-foreground mx-auto lg:mx-0"
+              style={enterDelay(2)}
+            >
               Assessoria jurídica personalizada em Direito do Trabalho e Civil. Compromisso com resultados e atendimento
               humanizado para proteger o que é seu por direito.
-            </motion.p>
+            </p>
 
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-col gap-4 sm:flex-row justify-center lg:justify-start"
+            <div
+              className="flex animate-hero-item flex-col gap-4 sm:flex-row justify-center lg:justify-start"
+              style={enterDelay(3)}
             >
               <Button
                 size="lg"
@@ -92,9 +71,9 @@ export function Hero(): JSX.Element {
               >
                 Conheça Nosso Trabalho
               </Button>
-            </motion.div>
+            </div>
 
-            <motion.div variants={itemVariants} className="mt-12 grid grid-cols-3 gap-4">
+            <div className="mt-12 grid animate-hero-item grid-cols-3 gap-4" style={enterDelay(4)}>
               {[
                 { icon: Users, value: '99+', label: 'Clientes Atendidos' },
                 { icon: Scale, value: '95%', label: 'Casos de Sucesso' },
@@ -108,15 +87,10 @@ export function Hero(): JSX.Element {
                   <span className="text-sm text-muted-foreground">{label}</span>
                 </div>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden items-center justify-center lg:flex"
-          >
+          <div className="hidden animate-hero-card items-center justify-center lg:flex">
             <div className="relative">
               <div className="flex shadow-2xl shadow-primary/30 h-96 w-80 items-center justify-center rounded-3xl border border-primary/20 bg-linear-to-br from-primary/10 via-primary/5 to-transparent">
                 <div className="p-8 text-center">
@@ -140,7 +114,7 @@ export function Hero(): JSX.Element {
                 <Users size={24} className="text-primary" />
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 

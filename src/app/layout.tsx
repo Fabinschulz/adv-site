@@ -1,7 +1,11 @@
 import { ClientProvider } from '@/components/providers';
 import { cn } from '@/utils';
 import type { Metadata } from 'next';
+import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
+
+const playfair = Playfair_Display({ subsets: ['latin'], display: 'swap', variable: '--font-playfair' });
+const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter', preload: false });
 
 export const metadata: Metadata = {
   title: 'Advocacia em Extrema | Mariana Advocacia',
@@ -21,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-BR" className={cn(playfair.variable, inter.variable)} suppressHydrationWarning>
       <body className={cn('antialiased')}>
         <ClientProvider>{children}</ClientProvider>
       </body>

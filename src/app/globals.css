@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
-
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
@@ -34,6 +32,28 @@
   --animate-float-up-sm: float-up-sm 3s ease-in-out infinite;
   --animate-float-down: float-down 2.5s ease-in-out infinite;
   --animate-scroll-hint: float-down 1.5s ease-in-out infinite;
+
+  --animate-hero-fade: hero-fade 0.3s cubic-bezier(0.25, 0.1, 0.35, 1) both;
+  --animate-hero-item: hero-fade 0.6s cubic-bezier(0, 0, 0.58, 1) both, hero-rise 0.6s ease-in-out both;
+  --animate-hero-card: hero-fade 0.8s cubic-bezier(0, 0, 0.58, 1) 0.4s both, hero-pop 0.8s ease-in-out 0.4s both;
+
+  @keyframes hero-fade {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @keyframes hero-rise {
+    from {
+      transform: translateY(30px);
+    }
+  }
+
+  @keyframes hero-pop {
+    from {
+      transform: scale(0.9);
+    }
+  }
 
   @keyframes float-up {
     50% {
@@ -190,11 +210,11 @@
 
 @layer utilities {
   .font-display {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-playfair), serif;
   }
 
   .font-body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-inter), sans-serif;
   }
 
   .text-gradient-gold {

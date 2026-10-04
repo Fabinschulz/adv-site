@@ -29,6 +29,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+# gerado localmente pelo pnpm >= 10 (allowBuilds); o CI usa pnpm 9, que exige `packages` nesse arquivo
+pnpm-workspace.yaml
 
 # env files (can opt-in for committing if needed)
 .env*
